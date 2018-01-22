@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="alurapic">
+<html lang="pt-br" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -8,11 +8,29 @@
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script src="js/lib/angular.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/controllers/fotoController.js"></script>
 </head>
-<body>
+<body ng-controller="fotosController">
 <div class="container">
-    <h1 class="text-center">Alurapic</h1>
-    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+
+    <div class="jumbotron">
+        <h1 class="text-center">Alurapic</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2" ng-repeat="foto in fotos">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">{{foto.titulo}}</h3>
+                </div>
+                <div class="panel-body">
+                    <img class="img-responsive center-block" src="{{foto.url}}">
+                </div><!-- fim panel-body -->
+            </div><!-- fim panel panel-default -->
+        </div><!-- fim col md 2 -->
+    </div><!-- fim row -->
+
+
 </div><!-- fim container -->
 </body>
 </html>

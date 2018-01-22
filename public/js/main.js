@@ -1,1 +1,1 @@
-angular.mudule('alurapic', []);
+var app = angular.module('app', []);
